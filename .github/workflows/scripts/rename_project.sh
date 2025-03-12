@@ -35,8 +35,8 @@ if [[ "$GITHUB_REPOSITORY_OWNER" != "devcentral" && "$GITHUB_REPOSITORY_OWNER" !
   rm -f .github/workflows/f5_cla.yml
 fi
 # Remove the template instructions from the README and the template's CHANGELOG
-sed -i '1,/^---$/d;1,/^$/d' README.md
-sed -i '1,/^---$/d;1,/^$/d' CHANGELOG.md
+sed -i '1,/^---$/ { /^$/d; d }' README.md
+sed -i '1,/^---$/ { /^$/d; d }' CHANGELOG.md
 # Remove this script and the GitHub Action workflow using this script
 rm -f .github/workflows/rename_template.yml
 rm -rf .github/workflows/scripts
