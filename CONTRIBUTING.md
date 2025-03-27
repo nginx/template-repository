@@ -13,7 +13,7 @@ The following is a set of guidelines for contributing to this project. We really
 
 Follow the instructions on the README's [Getting Started](/README.md#Getting-Started) section to get this project up and running.
 
-<!-- ### Project Structure (OPTIONAL) -->
+<!-- ### Project Overview/Structure (OPTIONAL) -->
 
 ## Contributing
 
