@@ -16,7 +16,7 @@ jobs:
   analysis:
     name: Scorecard analysis
     runs-on: ubuntu-24.04
-    # Delete the conditional below if you are using the OSSF Scorecard on a private repository.
+    # Delete the conditional below if you are using the OSSF Scorecard on a public repository.
     if: ${{ github.event.repository.private == false }}
     permissions:
       # Needed if using Code Scanning alerts.
