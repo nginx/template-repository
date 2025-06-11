@@ -10,10 +10,10 @@ body:
 
         Before you continue filling out this request, please take a moment to check that your feature has not been [already requested on GitHub][issue search] 🙌
 
-        **Note:** If you are seeking community support or have a question, please consider starting a new thread via [GitHub discussions][discussions] or the [NGINX Community forum][forum].
+        **Note:** If you are seeking community support, please start a new topic in the [NGINX Community forum][forum]. If you wish to discuss the codebase, please start a new thread via [GitHub discussions][discussions].
 
-        [issue search]: ../search?q=is%3Aissue&type=issues
-        [discussions]: ../discussions
+        [issue search]: https://github.com/{{REPOSITORY_OWNER}}/{{REPOSITORY_URL}}/search?q=is%3Aissue&type=issues
+        [discussions]: https://{{REPOSITORY_OWNER}}/{{REPOSITORY_URL}}/discussions
         [forum]: https://community.nginx.org
 
   - type: textarea
