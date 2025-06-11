@@ -20,10 +20,6 @@ For a comprehensive list of all NGINX directives, check out <https://nginx.org>.
 
 For a comprehensive list of administration and deployment guides for all NGINX products, check out <https://docs.nginx.com>.
 
-### Mailing List
-
-Want to get in touch with the NGINX development team directly? Try using the relevant mailing list found at <https://mailman.nginx.org/mailman3/lists/>!
-
 ## Contributing
 
 Please see the [contributing guide](/CONTRIBUTING.md) for guidelines on how to best contribute to this project.
