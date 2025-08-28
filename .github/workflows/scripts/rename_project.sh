@@ -37,6 +37,9 @@ fi
 # Remove the template instructions from the README and the template's CHANGELOG
 sed -i '1,/^---$/ { /^$/d; d }' README.md
 sed -i '1,/^---$/ { /^$/d; d }' CHANGELOG.md
+# Remove Renovatebot and activate Dependabot
+rm -f .github/renovate.json
+mv .github/dependabot.yml.inactive .github/dependabot.yml
 # Remove this script and the GitHub Action workflow using this script
 rm -f .github/workflows/rename_template.yml
 rm -rf .github/workflows/scripts
