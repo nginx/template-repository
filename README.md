@@ -13,9 +13,8 @@ This template includes all the scaffolding you need to get started on an OSS rep
 
 - [Apache License 2.0](/LICENSE) -> Required for all NGINX OSS projects unless otherwise determined by the project owner.
 - [F5 CLA GitHub workflow](/.github/workflows/f5_cla.yml) -> For more details on the action please check the [F5 CLA documentation repository](https://github.com/f5/f5-cla).
--
 - [`.gitignore`](/.gitignore) with some minimal sensible defaults.
-- [Issue](/.github/ISSUE_TEMPLATE) and [PR](/.github//pull_request_template.md) templates.
+- [Issue](/.github/ISSUE_TEMPLATE) and [PR](/.github/pull_request_template.md) templates.
 - [Contributing](/CONTRIBUTING.md) guidelines.
 - [Support](/SUPPORT.md) guidelines for either community and/or commercial support (uncomment the commercial block if necessary).
 - [Security](/SECURITY.md) guidelines for reporting major vulnerabilities.
