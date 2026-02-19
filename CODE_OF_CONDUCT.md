@@ -22,6 +22,8 @@ Examples of unacceptable behavior include:
 - Trolling, insulting or derogatory comments, and personal or political attacks.
 - Public or private harassment.
 - Publishing others' private information, such as a physical or email address, without their explicit permission.
+- Promoting or advertising commercial or competitive products, services, or projects (including in issues, pull requests, discussions, or
+  comments) without explicit permission from the project maintainers or community moderators.
 - Other conduct which could reasonably be considered inappropriate in a professional setting.
 
 ## Enforcement Responsibilities
