@@ -75,4 +75,4 @@ Please see the [contributing guide](/CONTRIBUTING.md) for guidelines on how to b
 
 [Apache License, Version 2.0](/LICENSE)
 
-&copy; [F5, Inc.](https://www.f5.com/) 2025
+&copy; [F5, Inc.](https://www.f5.com/) 2026
