@@ -9,6 +9,8 @@ on:
     - cron: "0 0 * * 1"
   push:
     branches: [main, master]
+  pull_request:
+    branches: [main, master]
   workflow_dispatch:
 # Declare default permissions as read only.
 permissions: read-all
