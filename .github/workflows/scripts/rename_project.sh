@@ -34,9 +34,9 @@ rm -f .github/scorecard.yml
 if [[ "$GITHUB_REPOSITORY_OWNER" != "devcentral" && "$GITHUB_REPOSITORY_OWNER" != "f5" && "$GITHUB_REPOSITORY_OWNER" != "f5networks" && "$GITHUB_REPOSITORY_OWNER" != "nginx" && "$GITHUB_REPOSITORY_OWNER" != "nginxinc" ]]; then
   rm -f .github/workflows/f5_cla.yml
 fi
-# Overwrite issue forms with the respective issue form templates
-cp -f .github/ISSUE_TEMPLATE/bug_report.yml.template .github/ISSUE_TEMPLATE/bug_report.yml
-cp -f .github/ISSUE_TEMPLATE/feature_request.yml.template .github/ISSUE_TEMPLATE/feature_request.yml
+# Replace project issue forms with the templated issue forms (filled by sed above)
+mv -f .github/ISSUE_TEMPLATE/bug_report.yml.template .github/ISSUE_TEMPLATE/bug_report.yml
+mv -f .github/ISSUE_TEMPLATE/feature_request.yml.template .github/ISSUE_TEMPLATE/feature_request.yml
 # Remove the template instructions from the README and the template's CHANGELOG
 sed -i '1,/^---$/ { /^$/d; d }' README.md
 sed -i '1,/^---$/ { /^$/d; d }' CHANGELOG.md
