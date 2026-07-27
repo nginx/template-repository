@@ -34,12 +34,15 @@ rm -f .github/scorecard.yml
 if [[ "$GITHUB_REPOSITORY_OWNER" != "devcentral" && "$GITHUB_REPOSITORY_OWNER" != "f5" && "$GITHUB_REPOSITORY_OWNER" != "f5networks" && "$GITHUB_REPOSITORY_OWNER" != "nginx" && "$GITHUB_REPOSITORY_OWNER" != "nginxinc" ]]; then
   rm -f .github/workflows/f5_cla.yml
 fi
+# Overwrite issue forms with the respective issue form templates
+cp -f .github/ISSUE_TEMPLATE/bug_report.yml.template .github/ISSUE_TEMPLATE/bug_report.yml
+cp -f .github/ISSUE_TEMPLATE/feature_request.yml.template .github/ISSUE_TEMPLATE/feature_request.yml
 # Remove the template instructions from the README and the template's CHANGELOG
 sed -i '1,/^---$/ { /^$/d; d }' README.md
 sed -i '1,/^---$/ { /^$/d; d }' CHANGELOG.md
 # Remove Renovatebot and activate Dependabot
 rm -f .github/renovate.json
-mv .github/dependabot.yml.inactive .github/dependabot.yml
+mv .github/dependabot.yml.template .github/dependabot.yml
 # Remove this script and the GitHub Action workflow using this script
 rm -f .github/workflows/rename_template.yml
 rm -rf .github/workflows/scripts
