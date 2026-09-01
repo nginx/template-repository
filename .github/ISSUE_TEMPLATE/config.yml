@@ -1,12 +1,26 @@
 ---
 blank_issues_enabled: false
 contact_links:
+  # BEGIN FLAVOR:F5
+  - name: 💬 Talk to the F5 community!
+    url: https://community.f5.com
+    about: DevCentral, a technical community for F5 users, developers, and contributors
+  # END FLAVOR:F5
+  # BEGIN FLAVOR:NGINX
   - name: 💬 Talk to the NGINX community!
     url: https://community.nginx.org
     about: A community forum for NGINX users, developers, and contributors
+  # END FLAVOR:NGINX
   - name: 📝 Code of Conduct
-    url: https://www.contributor-covenant.org/version/2/1/code_of_conduct
-    about: NGINX follows the Contributor Covenant Code of Conduct to ensure a safe and inclusive community
+    url: https://www.contributor-covenant.org/version/3/0/
+    about: This project follows the Contributor Covenant Code of Conduct to ensure a safe and inclusive community
+  # BEGIN FLAVOR:F5
+  - name: 💼 For commercial & enterprise users
+    url: https://www.f5.com/products
+    about: F5 offers a wide range of products for commercial & enterprise users
+  # END FLAVOR:F5
+  # BEGIN FLAVOR:NGINX
   - name: 💼 For commercial & enterprise users
     url: https://www.f5.com/products/nginx
     about: F5 offers a wide range of NGINX products for commercial & enterprise users
+  # END FLAVOR:NGINX

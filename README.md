@@ -1,18 +1,30 @@
-[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/nginx/template-repository/badge)](https://securityscorecards.dev/viewer/?uri=github.com/nginx/template-repository)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/f5/template-repository/badge)](https://securityscorecards.dev/viewer/?uri=github.com/f5/template-repository)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Community Support](https://badgen.net/badge/support/community/cyan?icon=awesome)](/SUPPORT.md)
+[![DevCentral](https://img.shields.io/badge/community-DevCentral-E4002B?link=https%3A%2F%2Fcommunity.f5.com)](https://community.f5.com)
 [![Community Forum](https://img.shields.io/badge/community-forum-009639?logo=discourse&link=https%3A%2F%2Fcommunity.nginx.org)](https://community.nginx.org)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/license/apache-2-0)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-3.0-4baaaa.svg)](/CODE_OF_CONDUCT.md)
 
-# NGINX Template Repository
+# F5 Template Repository
+
+This template includes all the scaffolding you need to get started on an OSS repository that meets the required F5 & NGINX criteria. It covers **both F5 and NGINX projects** -- the community links, documentation links, and Code of Conduct contact are picked for you automatically based on the GitHub organization your new repository is created in.
+
+## Which flavor will my repository get?
+
+| Repository owner | Flavor | Community | Documentation | Code of Conduct contact |
+| --- | --- | --- | --- | --- |
+| `nginx`, `nginxinc` | NGINX | [NGINX Community Forum](https://community.nginx.org) | <https://nginx.org>, <https://docs.nginx.com> | <nginx-oss-community@f5.com> |
+| Everything else (`f5`, `f5devcentral`, `f5networks`, ...) | F5 | [DevCentral](https://community.f5.com) | <https://my.f5.com>, <https://clouddocs.f5.com> | <f5_oss_conduct@f5.com> |
+
+Flavored content is wrapped in marker comments and resolved by [`rename_project.sh`](/.github/workflows/scripts/rename_project.sh) during the first CI run. The markers look like `BEGIN FLAVOR:<NGINX|F5>` / `END FLAVOR:<NGINX|F5>`, written as HTML comments in Markdown files and as `#` comments in YAML files. The matching flavor's blocks are unwrapped (markers stripped, content kept) and the other flavor's blocks are deleted outright, so nothing is left behind for you to clean up.
+
+If you need a different mix than the one your organization implies, just edit the resulting files after the first CI run -- the markers are gone by then and the content is plain Markdown/YAML.
 
 ## What is included on this template?
 
-This template includes all the scaffolding you need to get started on an OSS repository that meets the required F5 & NGINX criteria:
-
-- [Apache License 2.0](/LICENSE) -> Required for all NGINX OSS projects unless otherwise determined by the project owner.
-- [F5 CLA GitHub workflow](/.github/workflows/f5_cla.yml) -> For more details on the action please check the [F5 CLA documentation repository](https://github.com/f5/f5-cla).
+- [Apache License 2.0](/LICENSE) -> Required for all F5 & NGINX OSS projects unless otherwise determined by the project owner.
+- [F5 CLA GitHub workflow](/.github/workflows/f5_cla.yml) -> For more details on the action please check the [F5 CLA documentation repository](https://github.com/f5/f5-cla). This workflow is removed automatically if your repository is created outside of an F5 or NGINX organization.
 - [`.gitignore`](/.gitignore) with some minimal sensible defaults.
 - [Issue](/.github/ISSUE_TEMPLATE) and [PR](/.github/pull_request_template.md) templates.
 - [Contributing](/CONTRIBUTING.md) guidelines.
@@ -34,9 +46,9 @@ This template includes all the scaffolding you need to get started on an OSS rep
 
 ## How do I use this template?
 
-**DO NOT FORK** -- this template is meant to be used from the **[`Use this template`](https://github.com/nginx/template-repository/generate)** feature.
+**DO NOT FORK** -- this template is meant to be used from the **[`Use this template`](https://github.com/f5/template-repository/generate)** feature.
 
-1. Click on **[`Use this template`](https://github.com/nginx/template-repository/generate)**.
+1. Click on **[`Use this template`](https://github.com/f5/template-repository/generate)**.
 2. Give a name to your project.
 3. Wait until the first run of CI finishes (GitHub Actions will process the template and commit to your new repo).
 4. Clone your new project and tweak any of the placeholders if necessary. Pay special attention to the README! This README section will self-destruct.
@@ -49,9 +61,14 @@ This template includes all the scaffolding you need to get started on an OSS rep
 [![Project Status: Concept – Minimal or no implementation has been done yet, or the repository is only intended to be a limited example, demo, or proof-of-concept.](https://www.repostatus.org/badges/latest/concept.svg)](https://www.repostatus.org/#concept)
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/{{REPOSITORY_OWNER}}/{{REPOSITORY_URL}}/badge)](https://securityscorecards.dev/viewer/?uri=github.com/{{REPOSITORY_OWNER}}/{{REPOSITORY_URL}})
 [![Community Support](https://badgen.net/badge/support/community/cyan?icon=awesome)](/SUPPORT.md) <!-- [![Commercial Support](https://badgen.net/badge/support/commercial/cyan?icon=awesome)](<Insert URL>) -->
+<!-- BEGIN FLAVOR:F5 -->
+[![DevCentral](https://img.shields.io/badge/community-DevCentral-E4002B?link=https%3A%2F%2Fcommunity.f5.com)](https://community.f5.com)
+<!-- END FLAVOR:F5 -->
+<!-- BEGIN FLAVOR:NGINX -->
 [![Community Forum](https://img.shields.io/badge/community-forum-009639?logo=discourse&link=https%3A%2F%2Fcommunity.nginx.org)](https://community.nginx.org)
+<!-- END FLAVOR:NGINX -->
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/license/apache-2-0)
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](/CODE_OF_CONDUCT.md)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-3.0-4baaaa.svg)](/CODE_OF_CONDUCT.md)
 
 # {{REPOSITORY_NAME}}
 

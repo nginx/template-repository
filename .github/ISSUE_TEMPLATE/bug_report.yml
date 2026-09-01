@@ -12,11 +12,12 @@ body:
 
         Remember to redact any sensitive information such as authentication credentials and/or license keys!
 
-        **Note:** If you are seeking community support, please start a new topic in the [NGINX Community forum][forum]. If you wish to discuss the codebase, please start a new thread via [GitHub discussions][discussions].
+        **Note:** If you are seeking community support, please start a new topic on [DevCentral][forum] or in the [NGINX Community forum][nginx forum]. If you wish to discuss the codebase, please start a new thread via [GitHub discussions][discussions].
 
-        [issue search]: https://github.com/nginx/template-repository/search?q=is%3Aissue&type=issues
-        [discussions]: https://github.com/nginx/template-repository/discussions
-        [forum]: https://community.nginx.org
+        [issue search]: https://github.com/f5/template-repository/search?q=is%3Aissue&type=issues
+        [discussions]: https://github.com/f5/template-repository/discussions
+        [forum]: https://community.f5.com
+        [nginx forum]: https://community.nginx.org
 
   - type: textarea
     id: overview

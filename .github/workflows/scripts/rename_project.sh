@@ -10,9 +10,17 @@ do
   esac
 done
 
+# Resolve the documentation flavor from the repository owner. NGINX organizations
+# get the NGINX community/documentation resources, everybody else gets the F5 ones.
+case "$(echo "$owner" | tr '[:upper:]' '[:lower:]')" in
+  nginx|nginxinc) flavor="NGINX"; discarded_flavor="F5";;
+  *)              flavor="F5";    discarded_flavor="NGINX";;
+esac
+
 echo "Owner: $owner";
 echo "Repository Name: $name";
 echo "Repository URL: $url";
+echo "Flavor: $flavor";
 
 echo "Renaming repository..."
 
@@ -24,6 +32,11 @@ do
   sed -i "s/$original_owner/$owner/g" "$filename"
   sed -i "s/$original_name/$name/g" "$filename"
   sed -i "s/$original_url/$url/g" "$filename"
+  # Delete the discarded flavor's blocks wholesale, then unwrap the blocks we keep
+  # by dropping only their marker lines. Markers are written as HTML comments in
+  # Markdown files and as `#` comments in YAML files; both forms match here.
+  sed -i "/BEGIN FLAVOR:$discarded_flavor/,/END FLAVOR:$discarded_flavor/d" "$filename"
+  sed -i "/BEGIN FLAVOR:$flavor/d;/END FLAVOR:$flavor/d" "$filename"
   echo "Renamed $filename"
 done
 
@@ -31,7 +44,7 @@ done
 echo "Removing template specific data..."
 # Remove OSSF attestations and F5 specific GitHub Actions workflows
 rm -f .github/scorecard.yml
-if [[ "$GITHUB_REPOSITORY_OWNER" != "devcentral" && "$GITHUB_REPOSITORY_OWNER" != "f5" && "$GITHUB_REPOSITORY_OWNER" != "f5networks" && "$GITHUB_REPOSITORY_OWNER" != "nginx" && "$GITHUB_REPOSITORY_OWNER" != "nginxinc" ]]; then
+if [[ "$GITHUB_REPOSITORY_OWNER" != "devcentral" && "$GITHUB_REPOSITORY_OWNER" != "f5" && "$GITHUB_REPOSITORY_OWNER" != "f5devcentral" && "$GITHUB_REPOSITORY_OWNER" != "f5networks" && "$GITHUB_REPOSITORY_OWNER" != "nginx" && "$GITHUB_REPOSITORY_OWNER" != "nginxinc" ]]; then
   rm -f .github/workflows/f5_cla.yml
 fi
 # Replace project issue forms with the templated issue forms (filled by sed above)
