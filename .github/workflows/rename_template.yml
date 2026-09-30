@@ -7,7 +7,7 @@ jobs:
   rename-template:
     name: Replace the templated variables in the repository with the newly created repository details
     if: ${{ !contains(github.repository, 'template') }}
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     permissions:
       contents: write
     steps:

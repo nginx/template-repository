@@ -17,7 +17,7 @@ permissions: read-all
 jobs:
   analysis:
     name: Scorecard analysis
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     # Delete the conditional below if you are using the OSSF Scorecard on a public repository.
     if: ${{ github.event.repository.private == false }}
     permissions:
